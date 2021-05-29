@@ -1,0 +1,30 @@
+version: '3'
+services:
+    db: 
+      image: mysql:8.0.23
+      container_name: mysql_myfood
+      ports:
+          - 3309:3306
+      volumes:
+          - mysql_volume_myfood:/var/lib/mysql
+      environment:
+        MYSQL_DATABASE: myFood
+        MYSQL_ROOT_PASSWORD: 42424242
+        MYSQL_USER: vsyveniu
+        MYSQL_PASSWORD: 42424242
+      restart: always
+    phpmyadmin:
+      image: phpmyadmin:latest
+      container_name: phpmyadmin_myfood
+      ports: 
+        - 3310:80
+      depends_on: 
+        - db
+      restart: always
+      environment:
+        PMA_HOST: db
+        MYSQL_ROOT_PASSWORD: 42424242
+        MYSQL_USER: vsyveniu
+        MYSQL_PASSWORD: 42424242
+volumes: 
+  mysql_volume_myfood: {}
