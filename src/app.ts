@@ -25,6 +25,20 @@ app.set('views', path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, '/')));
 app.use('/', mainRoute);
 
+io.on('connection', async ()=> {
+
+    console.log('client connected');
+
+    let order: number = await currentOrder.getCurrent();
+
+    const dailyStr: string = await dailyMenu.getMenu(order);
+    const daily = JSON.parse(dailyStr)[0];
+
+    const todayMenu = await makeMenu(daily);
+
+    io.emit('menu', todayMenu);
+    
+});
 
 const job = scheduler.scheduleJob('* * * * *',  async function(){
 
