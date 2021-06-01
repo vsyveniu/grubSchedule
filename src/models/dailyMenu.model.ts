@@ -4,7 +4,7 @@ class dailyMenu {
   static async getMenu(position: number): Promise<string> {
     return new Promise((resolve, reject) => {
       db.execute(
-        `SELECT breakfast, lunch, dinner FROM dailyMenus WHERE position = ${position}`,
+        `SELECT pre_breakfast, breakfast, lunch, dinner, fruit_bud_protein FROM dailyMenus WHERE position = ${position}`,
         (err, results, fields) => {
           if (err) {
             reject(err);

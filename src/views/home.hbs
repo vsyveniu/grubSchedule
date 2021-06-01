@@ -1,21 +1,25 @@
 <div class="hero is-small is-link">
   <div class="hero-body">
-    <h1 class="title">Food menu you should listen to</h1>
-    <h1 class="subtitle">eat healthy food, boy</h1>
+    <h1 class="title is-size-1-touch">Food menu you should listen to</h1>
+    <h1 class="subtitle is-size-2-touch">eat healthy food, boy</h1>
   </div>
 </div>
 <div class="container section menu_list">
   {{#each menu}}
-    <div class="box">
-      <h3 class="title is-4"> {{title}}</h3>
-      <div class="block">
-        <p class="content">{{description}}</p>
+    {{#if optional}}
+    <div class="box has-background-info">
+    {{else}}
+      <div class="box">
+    {{/if}}  
+        <h3 class="title is-4 is-size-2-touch"> {{title}}</h3>
+        <div class="block">
+          <p class="content is-size-3-touch">{{description}}</p>
+        </div>
+        <hr />
+        <div class="block">
+          <p class="subtitle is-6 is-size-2-touch">Additional</p>
+          <p class="content is-size-3-touch"><i>{{additional}}</i></p>
+        </div>
       </div>
-      <hr />
-      <div class="block">
-        <p class="subtitle is-6">Additional</p>
-        <p class="content"><i>{{additional}}</i></p>
-      </div>
-    </div>
   {{/each}}
 </div>

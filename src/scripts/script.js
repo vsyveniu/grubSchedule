@@ -15,23 +15,23 @@ socket.on("menu", (msg) => {
     box.classList.add("box");
 
     let title = document.createElement("h3");
-    title.classList.add("title", "is-4");
+    title.classList.add("title", "is-4", "is-size-2-touch");
     title.innerHTML = el.title;
 
     let descriptionBlock = document.createElement("div");
     descriptionBlock.classList.add("block");
     let descriptionContent = document.createElement("p");
-    descriptionContent.classList.add("content");
+    descriptionContent.classList.add("content", "is-size-3-touch");
     descriptionContent.innerHTML = el.description;
     descriptionBlock.appendChild(descriptionContent);
 
     let additionalBlock = document.createElement("div");
     additionalBlock.classList.add("block");
     let additionalSubtitle = document.createElement("p");
-    additionalSubtitle.classList.add("subtitle", "is-6");
+    additionalSubtitle.classList.add("subtitle", "is-6", "is-size-2-touch");
     additionalSubtitle.innerHTML = "Additional";
     let additionalContent = document.createElement("p");
-    additionalContent.classList.add("content");
+    additionalContent.classList.add("content", "is-size-3-touch");
     additionalContent.innerHTML = el.additional;
     additionalBlock.appendChild(additionalSubtitle);
     additionalBlock.appendChild(additionalContent);

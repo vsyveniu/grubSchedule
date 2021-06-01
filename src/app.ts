@@ -27,8 +27,6 @@ app.use('/', mainRoute);
 
 io.on('connection', async ()=> {
 
-    console.log('client connected');
-
     let order: number = await currentOrder.getCurrent();
 
     const dailyStr: string = await dailyMenu.getMenu(order);
@@ -40,7 +38,7 @@ io.on('connection', async ()=> {
     
 });
 
-const job = scheduler.scheduleJob('* * * * *',  async function(){
+const job = scheduler.scheduleJob('0 0 * * *',  async function(){
 
     let order: number = await currentOrder.getCurrent();
     let max: number = await dailyMenu.getMax();
