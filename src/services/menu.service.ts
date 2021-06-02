@@ -23,7 +23,7 @@ async function makeNext(current: number) {
   let max: number = await dailyMenu.getMax();
 
   for (let i = current + 1; i <= edge; i++) {
-    if (i >= max) {
+    if (i > max) {
       edge = edge - i;
       i = 0;
     }

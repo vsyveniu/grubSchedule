@@ -17,8 +17,6 @@ router.get("/", async (req: Request, res: Response) => {
 
   const next = await makeNext(order);
 
-  console.log(next);
-
   res.render("home", { menu: todayMenu, next: next});
 });
 
