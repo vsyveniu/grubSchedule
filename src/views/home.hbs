@@ -1,4 +1,4 @@
-<div class="hero is-small is-link">
+<div class="hero is-small is-info">
   <div class="hero-body">
     <h1 class="title is-size-1-touch">Food menu you should listen to</h1>
     <h1 class="subtitle is-size-2-touch">eat healthy food, boy</h1>
@@ -7,9 +7,9 @@
 <div class="container section menu_list">
   {{#each menu}}
     {{#if optional}}
-    <div class="box has-background-info">
+    <div class="box has-background-info-light">
     {{else}}
-      <div class="box">
+      <div class="box has-background-warning-light">
     {{/if}}  
         <h3 class="title is-4 is-size-2-touch"> {{title}}</h3>
         <div class="block">
@@ -21,5 +21,15 @@
           <p class="content is-size-3-touch"><i>{{additional}}</i></p>
         </div>
       </div>
+  {{/each}}
+</div>
+<div class="container section next_container">
+  {{#each next}}
+  <div class="box next_item">
+    {{#each this}}
+      <div class="is-size-3-touch next_item_content"> {{title}}</div>
+    {{/each}}
+  </div>
+  
   {{/each}}
 </div>

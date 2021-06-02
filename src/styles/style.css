@@ -1,4 +1,16 @@
 
-.fuck{
-    border: 2px solid coral;
+.next_container{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    
 }
+.next_item{
+    margin-left: 1em;
+    margin-bottom: 24px;
+    min-width: 450px;
+}
+.next_item_content{
+    margin-top: 10px;
+}
+

@@ -27,14 +27,14 @@ app.use('/', mainRoute);
 
 io.on('connection', async ()=> {
 
-    let order: number = await currentOrder.getCurrent();
+/*     let order: number = await currentOrder.getCurrent();
 
     const dailyStr: string = await dailyMenu.getMenu(order);
     const daily = JSON.parse(dailyStr)[0];
 
     const todayMenu = await makeMenu(daily);
 
-    io.emit('menu', todayMenu);
+    io.emit('menu', todayMenu); */
     
 });
 
